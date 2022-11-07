@@ -42,9 +42,9 @@
 
 #define TEST_PIN           5
 
-#define SPI_DDR			DDRB						// DDR fuer SPI
-#define SPI_PORT        PORTB						// Port fuer SPI
-#define SPI_PORTPIN     PINB						// Port-Pin fuer SPI
+#define SPI_WL_DDR			DDRB						// DDR fuer SPI
+#define SPI_WL_PORT        PORTB						// Port fuer SPI
+#define SPI_WL_PORTPIN     PINB						// Port-Pin fuer SPI
 
 #define SPI_MISO           PB4
 #define SPI_MOSI           PB3
@@ -62,12 +62,13 @@
 #define INT0_PIN        PD2
 #define INT1_PIN        PD3
 
-// Port fuer Chip select
+/*
+// Port fuer Chip select, in wl_module
 #define SPI_WL_PORT     PORTC
 #define SPI_WL_DDR      DDRC
 #define SPI_WL_CE       PC0
 #define SPI_WL_CSN      PC1
-
+*/
 #define WL_ISR_RECV  7
 #define WL_SEND_REQUEST 6
 #define WL_NEXT_REQUEST 5
@@ -85,3 +86,68 @@
 #define PWM_DETECT_PIN     PINB
 #define PWM_DETECT         7 // Pin fuer detect
 #define PWM_DETECT_BIT     1 // bit fuer HI
+
+
+
+
+#define COMP_PORT PORTB
+#define COMP_DDR DDRB
+
+// Pins fuer Drive der RC
+#define COMP_DRIVE_PIN_A  1
+#define COMP_DRIVE_PIN_B  2
+
+#define COMP_ADC_PORT PORTC
+#define COMP_ADC_DDR DDRC
+
+#define COMP_ADC_PIN_A  4
+#define COMP_ADC_PIN_B  5
+
+#define COMP_AIN_PORT   PORTD
+#define COMP_AIN_DDR    DDRD
+#define COMP_AIN0       6
+#define COMP_AIN1       7
+
+
+#define MULTIPLEX
+
+#define PROGRAMM_DS   0
+#define GRUPPE_DS      0xC0
+//#define GRUPPE_DS   0xB0
+
+#define TWI_PORT      PORTC
+#define TWI_PIN      PINC
+#define TWI_DDR      DDRC
+
+#define SDAPIN      4
+#define SCLPIN      5
+
+#define SPI_PORT     PORTB
+#define SPI_PIN      PINB
+#define SPI_DDR      DDRB
+
+
+
+#define TASTE1      19
+#define TASTE2      29
+#define TASTE3      44
+#define TASTE4      67
+#define TASTE5      94
+#define TASTE6      122
+#define TASTE7      155
+#define TASTE8      186
+#define TASTE9      205
+#define TASTEL      223
+#define TASTE0      236
+#define TASTER      248
+#define TASTATURPORT PORTC
+#define TASTATURPIN      3
+
+#define MANUELL_PORT      PORTD
+#define MANUELL_DDR      DDRD
+#define MANUELL_PIN      PIND
+
+#define MANUELL         7   // Bit 7 von Status 
+#define MANUELLPIN      6   // Pin 6 von PORT D fuer Anzeige Manuell
+#define MANUELLNEU      7   // Pin 7 von Status. Gesetzt wenn neue Schalterposition eingestellt
+#define MANUELLTIMEOUT   100 // Loopled-counts bis Manuell zurueckgesetzt wird. 02FF: ca. 100 s

@@ -81,46 +81,6 @@ uint16_t loopCount2=0;
 
 uint16_t pwmpos=0;
 
-#define PROGRAMM_DS	0
-#define GRUPPE_DS		0xC0
-//#define GRUPPE_DS	0xB0
-
-#define TWI_PORT		PORTC
-#define TWI_PIN		PINC
-#define TWI_DDR		DDRC
-
-#define SDAPIN		4
-#define SCLPIN		5
-
-#define SPI_PORT     PORTB
-#define SPI_PIN      PINB
-#define SPI_DDR      DDRB
-
-
-
-#define TASTE1		19
-#define TASTE2		29
-#define TASTE3		44
-#define TASTE4		67
-#define TASTE5		94
-#define TASTE6		122
-#define TASTE7		155
-#define TASTE8		186
-#define TASTE9		205
-#define TASTEL		223
-#define TASTE0		236
-#define TASTER		248
-#define TASTATURPORT PORTC
-#define TASTATURPIN		3
-
-#define MANUELL_PORT		PORTD
-#define MANUELL_DDR		DDRD
-#define MANUELL_PIN		PIND
-
-#define MANUELL			7	// Bit 7 von Status 
-#define MANUELLPIN		6	// Pin 6 von PORT D fuer Anzeige Manuell
-#define MANUELLNEU		7	// Pin 7 von Status. Gesetzt wenn neue Schalterposition eingestellt
-#define MANUELLTIMEOUT	100 // Loopled-counts bis Manuell zurueckgesetzt wird. 02FF: ca. 100 s
 
 
 #define FOSC 1000000    /* oscillator-frequency in Hz */
@@ -173,33 +133,14 @@ volatile uint8_t wl_data[wl_module_PAYLOAD] = {};
 
 
 
-volatile uint8_t pipenummer = 0;
+volatile uint8_t pipenummer = 1;
 
 //volatile char text[] = {'*','M','a','s','t','e','r','*'};
 char* text = "* Master *";
 
 // ACD https://www.avrprogrammers.com/howto/attiny-comparator
 // ACD https://www.avrprogrammers.com/howto/attiny-comparator
-#define COMP_PORT PORTB
-#define COMP_DDR DDRB
-
-// Pins fuer Drive der RC
-#define COMP_DRIVE_PIN_A  1
-#define COMP_DRIVE_PIN_B  2
-
-#define COMP_ADC_PORT PORTC
-#define COMP_ADC_DDR DDRC
-
-#define COMP_ADC_PIN_A  4
-#define COMP_ADC_PIN_B  5
-
-#define COMP_AIN_PORT   PORTD
-#define COMP_AIN_DDR    DDRD
-#define COMP_AIN0       6
-#define COMP_AIN1       7
-
-
-#define MULTIPLEX 1
+ 
 
 volatile uint16_t captured_value;
 volatile uint8_t captured;
@@ -683,6 +624,7 @@ int main (void)
    delay_ms(100);
 //   SPI_Init();
 //   SPI_Master_init();
+   
    lcd_initialize(LCD_FUNCTION_8x2, LCD_CMD_ENTRY_INC, LCD_CMD_ON);
    lcd_puts("Guten Tag\0");
    delay_ms(200);
