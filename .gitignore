@@ -1,0 +1,13 @@
+build/*
+*.eep
+*.elf
+*.lss
+*.lst
+*.map
+*.sym
+*.xcodeproj/project.*
+*.hex
+*.o
+.dep
+run*
+RF24/*
