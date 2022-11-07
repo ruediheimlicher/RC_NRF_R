@@ -5,9 +5,11 @@ build/*
 *.lst
 *.map
 *.sym
-*.xcodeproj/project.*
+*.xcodeproj*
 *.hex
 *.o
 .dep
 run*
 RF24/*
+RF24.*
+nRF*
